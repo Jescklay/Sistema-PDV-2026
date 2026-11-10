@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-mono-num {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* PREVENÇÃO RIGOROSA DE ZOOM AUTOMÁTICO EM DISPOSITIVOS MÓVEIS (iOS/Android) */
+@media screen and (max-width: 768px) {
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    select,
+    textarea,
+    .pin-btn {
+        font-size: 16px !important;
+        -webkit-text-size-adjust: 100%;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #020617;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* ========================================================
+   ESTILOS DE IMPRESSÃO (MEDIA PRINT)
+   ======================================================== */
+@media print {
+    /* Oculta elementos de navegação, botões e barras laterais da interface */
+    .no-print {
+        display: none !important;
+    }
+
+    /* Remove fundos escuros do sistema e garante fundo branco limpo na folha */
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Recibo / Comprovante impresso sem bordas, cantos arredondados ou sombras */
+    #printable-receipt {
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        max-width: 80mm !important;
+        padding: 0 !important;
+    }
+
+    /* Layout da folha de etiquetas A4 limpo e sem efeitos visuais de cartões */
+    .a4-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        background: #ffffff !important;
+    }
+
+    .label-card {
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        padding: 4px;
+        text-align: center;
+        page-break-inside: avoid;
+    }
+}
